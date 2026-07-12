@@ -1,0 +1,75 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNzceCM1UPOUVrseizuuSol",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jalzatepe/Actividad6--POO/blob/main/Ejercicio%204.4%20Polimorfismo\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ji5WbI6KwoBr",
+        "outputId": "18eb31d7-57fe-4ef8-9081-a86fc452ed59"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "--- EJECUCIÓN CON POLIMORFISMO ---\n",
+            "Es un profesor titular.\n"
+          ]
+        }
+      ],
+      "source": [
+        "class Profesor:\n",
+        "\n",
+        "    def imprimir(self):\n",
+        "\n",
+        "        print(\"Es un profesor.\")\n",
+        "\n",
+        "\n",
+        "class ProfesorTitular(Profesor):\n",
+        "\n",
+        "    def imprimir(self):\n",
+        "\n",
+        "        print(\"Es un profesor titular.\")\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    print(\"--- EJECUCIÓN CON POLIMORFISMO ---\")\n",
+        "\n",
+        "\n",
+        "    profesor1 = ProfesorTitular()\n",
+        "\n",
+        "\n",
+        "    profesor1.imprimir()"
+      ]
+    }
+  ]
+}
