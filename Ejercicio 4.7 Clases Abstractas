@@ -1,0 +1,153 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPhOqCK+nSq4xAxmeqH48T3",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jalzatepe/Actividad6--POO/blob/main/Ejercicio%204.7%20Clases%20Abstractas\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5z3jiYsqI5M8",
+        "outputId": "c069c525-f19d-4d6d-e25c-317def473879"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Felis silvestris catus\n",
+            "Sonido: Maullido\n",
+            "Alimentos: Ratones\n",
+            "Hábitat: Doméstico\n",
+            "\n",
+            "Canis lupus familiaris\n",
+            "Sonido: Ladrido\n",
+            "Alimentos: Carnívoro\n",
+            "Hábitat: Doméstico\n",
+            "\n",
+            "Canis lupus\n",
+            "Sonido: Aullido\n",
+            "Alimentos: Carnívoro\n",
+            "Hábitat: Bosque\n",
+            "\n",
+            "Panthera leo\n",
+            "Sonido: Rugido\n",
+            "Alimentos: Carnívoro\n",
+            "Hábitat: Praderas\n",
+            "\n"
+          ]
+        }
+      ],
+      "source": [
+        "from abc import ABC, abstractmethod\n",
+        "\n",
+        "class Animal(ABC):\n",
+        "\n",
+        "    def __init__(self):\n",
+        "\n",
+        "        self._sonido = None\n",
+        "        self._alimentos = None\n",
+        "        self._habitat = None\n",
+        "        self._nombreCientifico = None\n",
+        "\n",
+        "    @abstractmethod\n",
+        "    def getNombreCientifico(self) -> str:\n",
+        "        pass\n",
+        "\n",
+        "    @abstractmethod\n",
+        "    def getSonido(self) -> str:\n",
+        "        pass\n",
+        "\n",
+        "    @abstractmethod\n",
+        "    def getAlimentos(self) -> str:\n",
+        "        pass\n",
+        "\n",
+        "    @abstractmethod\n",
+        "    def getHabitat(self) -> str:\n",
+        "        pass\n",
+        "\n",
+        "\n",
+        "class Canido(Animal, ABC):\n",
+        "\n",
+        "    pass\n",
+        "\n",
+        "\n",
+        "class Felino(Animal, ABC):\n",
+        "\n",
+        "    pass\n",
+        "\n",
+        "\n",
+        "class Perro(Canido):\n",
+        "\n",
+        "    def getSonido(self) -> str: return \"Ladrido\"\n",
+        "    def getAlimentos(self) -> str: return \"Carnívoro\"\n",
+        "    def getHabitat(self) -> str: return \"Doméstico\"\n",
+        "    def getNombreCientifico(self) -> str: return \"Canis lupus familiaris\"\n",
+        "\n",
+        "\n",
+        "class Lobo(Canido):\n",
+        "\n",
+        "    def getSonido(self) -> str: return \"Aullido\"\n",
+        "    def getAlimentos(self) -> str: return \"Carnívoro\"\n",
+        "    def getHabitat(self) -> str: return \"Bosque\"\n",
+        "    def getNombreCientifico(self) -> str: return \"Canis lupus\"\n",
+        "\n",
+        "\n",
+        "class Leon(Felino):\n",
+        "\n",
+        "    def getSonido(self) -> str: return \"Rugido\"\n",
+        "    def getAlimentos(self) -> str: return \"Carnívoro\"\n",
+        "    def getHabitat(self) -> str: return \"Praderas\"\n",
+        "    def getNombreCientifico(self) -> str: return \"Panthera leo\"\n",
+        "\n",
+        "\n",
+        "class Gato(Felino):\n",
+        "\n",
+        "    def getSonido(self) -> str: return \"Maullido\"\n",
+        "    def getAlimentos(self) -> str: return \"Ratones\"\n",
+        "    def getHabitat(self) -> str: return \"Doméstico\"\n",
+        "    def getNombreCientifico(self) -> str: return \"Felis silvestris catus\"\n",
+        "\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "\n",
+        "    animales = [Gato(), Perro(), Lobo(), Leon()]\n",
+        "\n",
+        "\n",
+        "    for animal in animales:\n",
+        "        print(animal.getNombreCientifico())\n",
+        "        print(f\"Sonido: {animal.getSonido()}\")\n",
+        "        print(f\"Alimentos: {animal.getAlimentos()}\")\n",
+        "        print(f\"Hábitat: {animal.getHabitat()}\")\n",
+        "        print()"
+      ]
+    }
+  ]
+}
