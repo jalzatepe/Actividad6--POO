@@ -1,0 +1,88 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNonCPj1GZLJyNeeivUMeTa",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jalzatepe/Actividad6--POO/blob/main/Ejercicicio%202.10%20SobreCarga%20de%20Metodos\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8mTqBKbALO4i",
+        "outputId": "af0af4c0-40b0-48b8-e99c-43db21204c6b"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "El costo de Sancocho y Gaseosa es = $7000.00\n",
+            "El costo de Crema de verduras + Churrasco + Gaseosa es = $13000.00\n",
+            "El costo de Crema de espinacas + Salmón + Gaseosa + Tiramisú es = $22000.00\n"
+          ]
+        }
+      ],
+      "source": [
+        "class Pedido:\n",
+        "\n",
+        "    def calcularPedido(self, primerPlato, costoPrimerPlato, bebida, costoBebida,\n",
+        "                       segundoPlato=None, costoSegundoPlato=0.0,\n",
+        "                       postre=None, costoPostre=0.0):\n",
+        "\n",
+        "\n",
+        "        total = costoPrimerPlato + costoBebida + costoSegundoPlato + costoPostre\n",
+        "\n",
+        "\n",
+        "        if segundoPlato is not None and postre is not None:\n",
+        "\n",
+        "            print(f\"El costo de {primerPlato} + {segundoPlato} + {bebida} + {postre} es = ${total:.2f}\")\n",
+        "        elif segundoPlato is not None:\n",
+        "\n",
+        "            print(f\"El costo de {primerPlato} + {segundoPlato} + {bebida} es = ${total:.2f}\")\n",
+        "        else:\n",
+        "\n",
+        "            print(f\"El costo de {primerPlato} y {bebida} es = ${total:.2f}\")\n",
+        "\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "\n",
+        "    pedido1 = Pedido()\n",
+        "    pedido1.calcularPedido(\"Sancocho\", 5000, \"Gaseosa\", 2000)\n",
+        "\n",
+        "\n",
+        "    pedido2 = Pedido()\n",
+        "    pedido2.calcularPedido(\"Crema de verduras\", 5000, \"Gaseosa\", 2000, segundoPlato=\"Churrasco\", costoSegundoPlato=6000)\n",
+        "\n",
+        "\n",
+        "    pedido3 = Pedido()\n",
+        "    pedido3.calcularPedido(\"Crema de espinacas\", 5000, \"Gaseosa\", 2000, segundoPlato=\"Salmón\", costoSegundoPlato=10000, postre=\"Tiramisú\", costoPostre=5000)"
+      ]
+    }
+  ]
+}
