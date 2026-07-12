@@ -1,0 +1,112 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOMyp++bqV+ymLTqFY/o1vp",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jalzatepe/Actividad6--POO/blob/main/Ejercicio%202.11%20%20Sobrecarga%20de%20Constructores\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kGfT2ugoq-ik",
+        "outputId": "320f872d-1d2f-4b28-8923-9486d3304847"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Título del artículo = La teoría especial de la relatividad\n",
+            "Autor del artículo = Albert Einstein\n",
+            "Palabras clave = \n",
+            " - Física\n",
+            " - Espacio\n",
+            " - Tiempo\n",
+            "Publicación = Anales de Física\n",
+            "Año = 1913\n",
+            "Resumen = Las leyes de la física son las mismas en todos los sistemas de referencia inerciales.\n"
+          ]
+        }
+      ],
+      "source": [
+        "class ArticuloCientifico:\n",
+        "\n",
+        "\n",
+        "    def __init__(self, titulo, autor, palabrasClaves=None, publicacion=None, ano=0, resumen=None):\n",
+        "\n",
+        "\n",
+        "        self.titulo = titulo\n",
+        "        self.autor = autor\n",
+        "\n",
+        "\n",
+        "        if palabrasClaves is None:\n",
+        "            self.palabrasClaves = []\n",
+        "        else:\n",
+        "            self.palabrasClaves = palabrasClaves\n",
+        "\n",
+        "        self.publicacion = publicacion\n",
+        "        self.ano = ano\n",
+        "\n",
+        "\n",
+        "        self.resumen = resumen\n",
+        "\n",
+        "    def imprimir(self):\n",
+        "\n",
+        "        print(f\"Título del artículo = {self.titulo}\")\n",
+        "        print(f\"Autor del artículo = {self.autor}\")\n",
+        "        print(\"Palabras clave = \")\n",
+        "\n",
+        "\n",
+        "        for palabra in self.palabrasClaves:\n",
+        "            print(f\" - {palabra}\")\n",
+        "\n",
+        "        print(f\"Publicación = {self.publicacion}\")\n",
+        "        print(f\"Año = {self.ano}\")\n",
+        "        print(f\"Resumen = {self.resumen}\")\n",
+        "\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    palabras = [\"Física\", \"Espacio\", \"Tiempo\"]\n",
+        "\n",
+        "\n",
+        "    articulo = ArticuloCientifico(\n",
+        "        titulo=\"La teoría especial de la relatividad\",\n",
+        "        autor=\"Albert Einstein\",\n",
+        "        palabrasClaves=palabras,\n",
+        "        publicacion=\"Anales de Física\",\n",
+        "        ano=1913,\n",
+        "        resumen=\"Las leyes de la física son las mismas en todos los sistemas de referencia inerciales.\"\n",
+        "    )\n",
+        "\n",
+        "\n",
+        "    articulo.imprimir()"
+      ]
+    }
+  ]
+}
