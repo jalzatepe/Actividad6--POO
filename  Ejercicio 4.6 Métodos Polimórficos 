@@ -1,0 +1,91 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNWEVD4RNO1BFyyqhsNhIDG",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jalzatepe/Actividad6--POO/blob/main/%20Ejercicio%204.6%20M%C3%A9todos%20Polim%C3%B3rficos%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pb37Hcab38MN",
+        "outputId": "1b825dbe-586c-46d8-dfa3-6c4c5065a15a"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Es un Profesor\n",
+            "===============\n",
+            "\n",
+            "Es un Profesor Titular\n",
+            "Años = 0\n",
+            "===============\n",
+            "\n"
+          ]
+        }
+      ],
+      "source": [
+        "class Profesor:\n",
+        "    def imprimir(self):\n",
+        "        print(\"Es un Profesor\")\n",
+        "\n",
+        "\n",
+        "class ProfesorTitular(Profesor):\n",
+        "    def __init__(self):\n",
+        "        super().__init__()\n",
+        "        self.anos = 0\n",
+        "\n",
+        "    def imprimir(self):\n",
+        "        print(\"Es un Profesor Titular\")\n",
+        "\n",
+        "    def imprimirAnos(self):\n",
+        "        print(f\"Años = {self.anos}\")\n",
+        "\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "\n",
+        "    lista_profesores = [Profesor(), ProfesorTitular()]\n",
+        "\n",
+        "\n",
+        "    for prof in lista_profesores:\n",
+        "        prof.imprimir()\n",
+        "\n",
+        "\n",
+        "        if hasattr(prof, 'imprimirAnos'):\n",
+        "            prof.imprimirAnos()\n",
+        "\n",
+        "\n",
+        "        print(\"===============\")\n",
+        "        print()"
+      ]
+    }
+  ]
+}
